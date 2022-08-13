@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.parent {
+  background-color: #23424a;
+  margin: 0 auto;
+  padding: 50px;
+  /* 1강 포인트. Percentages vs Fixed widths */
+
+  /* 고정값이면 뷰포트가 고정값보다 작아졌을 때 고정값을 적용한 요소가 뷰포트 밖으로 넘어가서 스크롤 바가 활성화된다.*/
+  /* width: 900px; */
+
+  /* 단, %값일 경우 뷰포트에 따라 비율에 맞게 너비를 가져가기 때문에 뷰포트를 넘어가지 않아 스크롤 바가 활성화되지 않는다. */
+  width: 80%;
+}
+
+.child {
+  background-color: #38cfd9;
+  /* 보통 height는 적용하지 않지만 시작하기 위해 적용하였습니다. */
+  height: 250px;
+}

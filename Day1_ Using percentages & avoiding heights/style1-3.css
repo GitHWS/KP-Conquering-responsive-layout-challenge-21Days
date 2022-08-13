@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  background-color: #23424a;
+  color: white;
+  margin: 0 auto;
+  width: 80%;
+
+  /* 3강 포인트. Why it's a good idea to avoid heights */
+  /* 반응형 레이아웃에서 height를 적용할 경우 레이아웃이 무너지는 문제가 많이 발생한다. */
+  height: 300px;
+  /* height를 사용하는 방법보다 padding을 이용하는 것을 권장한다. */
+  /* 여기서 em 단위를 사용하면 적용된 폰트사이즈에 따라 유동적인 padding을 가진다. */
+  /* 기본적으로 웹사이트들은 반응형이라는 것을 명심하자. */
+  padding: 5em;
+}
