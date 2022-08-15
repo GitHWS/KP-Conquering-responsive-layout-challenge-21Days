@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.container {
+  background: #23424a;
+  color: white;
+  width: 80%;
+  /* 3강 포인트. Adding in a max-width */
+  /* max-width는 반응형 레이아웃에서 요소의 크기가 제한없이 늘어나는 것을 방지하는 속성이다. */
+  /* 최대 너비를 지정해줘서 그 이상을 넘어가지 않게 한다. */
+  /* 현재 이 경우 width가 80%이기 때문에 viewport의 80%를 너비로 가지는데 viewport가 커질수록 더 많은 너비를 차지하기 때문에 불필요하게 넓은 영역을 차지할 수 있다. */
+  /* 그래서 max-width를 고정값으로 줘서 필요한 최대 영역만 잡아주는 것이다. */
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.intro-content {
+  width: 50%;
+}
