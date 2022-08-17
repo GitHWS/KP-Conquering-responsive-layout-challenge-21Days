@@ -1,0 +1,48 @@
+/* reset */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+button{
+  font-family: "Roboto";
+  border:none;
+}
+
+.intro{
+  padding:148px 0;
+  background-color: #23424A;
+  font-family: "Roboto";
+  color:#fff;
+}
+.intro-container{
+  margin:0 auto;
+  width:80%;
+  max-width:1440px;
+}
+
+.intro-content{
+  width:59%;
+}
+
+.intro-content h1{
+  margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight:900;
+}
+
+.intro-content p{
+  margin-bottom: 60px;
+  font-size:1.3rem;
+}
+
+.intro-content .learn-btn{
+  padding:16px 48px;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color:black;
+  background-color: #38CFD9;
+}
