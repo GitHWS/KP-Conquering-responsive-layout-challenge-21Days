@@ -25,17 +25,16 @@ body {
 
 /* Q1 Answer) .container를 감싸는 .wrapper 추가하여 viewport 전체 너비를 가지게 하고 배경색을 입혀준다. */
 .wrapper {
-  width: 100%;
+  padding: 50px 0;
   background: #23424a;
+  color: white;
 }
 
 .container {
   margin: 0 auto;
-  padding: 50px 0;
   width: 80%;
   /* Q1 Answer) width가 80%이기 때문에 viewport에 비례하여 너비가 증가한다. 그러므로 .container의 최대 너비를 제한시키서 750px을 넘기면 더이상 늘어나지 않게 한다. */
   max-width: 750px;
-  color: white;
 }
 
 .intro-content {
