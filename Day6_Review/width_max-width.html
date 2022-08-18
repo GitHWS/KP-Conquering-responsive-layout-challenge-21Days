@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>width & max-width</title>
+  <style>
+    /* case1. width를 절대값(px)으로 하고 max-width를 상대값(%)으로 했을때 */
+    .child-case1{
+      width:600px;
+      max-width:100%;
+      background-color: orange;
+    }
+    
+    /* case2. width를 상대값(%)으로 하고 max-width를 절대값(px)으로 했을때 */
+    .child-case2{
+      width:100%;
+      max-width:600px;
+      background-color: orange;
+    }
+
+    /* case1과 case2의 결과는 차이가 없다. 하지만 후자가 더욱 파악하기 용이하다. */
+
+    /* case3. width의 값이 max-width의 값을 오버했을 때 */
+    /* max-width의 규칙 위반으로 강제로 max-width의 값을 적용시킨다. */
+    .child-case3{
+      width:1000px;
+      max-width:600px;
+      background-color: orange;
+    }
+
+    /* width의 값이 */
+
+    .parent-case4{
+      width:1000px;
+    }
+
+    .child-case4{
+      /* case1 예시 */
+      /* 부모의 너비는 1000px, 자식의 너비는 600px로 적용되어있지만 max-width는 100%이기 때문에 부모의 너비인 1000px이 적용된다. 따라서 max-width의 규칙 위반이 아니다. */
+      /* 하지만 자식의 너비는 절대값인 600px로 고정되어 있어 width는 600px이 적용된다. */
+      width:600px;
+      max-width:100%;
+
+      /* case2 예시 */
+      /* 부모의 너비는  1000px, 자식의 너비는 부모의 너비를 따라가는 상대값 100%이기 때문에 1000px이 된다. */
+      /* 하지만 max-width가 600px로 적용이 되어있기 때문에 규칙 위반으로 자식의 너비는 600px이 된다. */
+      /* width:100%;
+      max-width:600px; */
+
+      background-color: salmon;
+    }
+
+    .parent-case5{
+      width:320px;
+    }
+
+    .child-case5{
+      /* case1 예시 */
+      /* 부모의 너비는 320px, 자식의 너비는 600px로 적용되어있지만 max-width는 100%이기 때문에 부모의 너비인 320px이 적용된다. 따라서 max-width의 규칙 위반이다. */
+      /* 따라서 max-width의 값인 부모의 너비, 즉 320px이 적용이 된다. */
+      width: 600px;
+      max-width:100%;
+
+      /* case2 예시 */
+      /* 부모의 너비는 320px, 자식의 너비는 부모의 너비의 100%인 320px이 적용된다. max-width는 600px이 적용되어 있으나 현재 자식의 너비가 320px이 적용되어 있기 때문에 규칙 위반이라고 할 수 없다. */
+      /* width:100%;
+      max-width: 600px; */
+      
+      background-color: salmon;
+    }
+  </style>
+</head>
+<body>
+  
+  <h2>case1. width를 절대값(px)으로 하고 max-width를 상대값(%)으로 했을때</h2>
+  <div class="child-case1">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eius nesciunt error eos enim eveniet exercitationem alias atque ad reiciendis iure maiores incidunt, architecto voluptates quos inventore voluptatibus maxime est.</p>
+  </div>
+  
+  <h2>case2. width를 상대값(%)으로 하고 max-width를 절대값(px)으로 했을때</h2>
+  <div class="child-case2">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eius nesciunt error eos enim eveniet exercitationem alias atque ad reiciendis iure maiores incidunt, architecto voluptates quos inventore voluptatibus maxime est.</p>
+  </div>
+
+  <p>결론 : case1과 case2의 결과는 차이가 없다. 하지만 후자가 더욱 파악하기 용이하다.</p>
+    
+
+  <h2>case3. width의 값이 max-width의 값을 오버했을 때</h2>
+  <div class="child-case3">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eius nesciunt error eos enim eveniet exercitationem alias atque ad reiciendis iure maiores incidunt, architecto voluptates quos inventore voluptatibus maxime est.</p>
+  </div>
+    
+
+  <h2>부모의 너비가 1000px일때 case1과 case2의 차이</h2>
+  <div class="parent-case4">
+    <div class="child-case4">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eius nesciunt error eos enim eveniet exercitationem alias atque ad reiciendis iure maiores incidunt, architecto voluptates quos inventore voluptatibus maxime est.</p>
+    </div>
+  </div>
+  
+  <h2>부모의 너비가 320px일때 case1과 case2의 차이</h2>
+  <div class="parent-case5">
+    <div class="child-case5">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, eius nesciunt error eos enim eveniet exercitationem alias atque ad reiciendis iure maiores incidunt, architecto voluptates quos inventore voluptatibus maxime est.</p>
+    </div>
+  </div>
+</body>
+</html>
