@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: pink;
+        width: 80vw;
+        height: 25vh;
+        padding: 0.5em;
+        margin: 25vh auto 0;
+
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+      }
+
+      .item {
+        background-color: lightblue;
+        margin: 0.5em;
+
+        /* flex-grow : item이 늘어남의 정도를 설정하는 속성이다. 사용하지 않는 영역을 얼마나 더 차지할 것인지 결정하는 속성이다. 값을 설정 시 높을수록 container가 늘어났을 때 빠른 속도로 큰 영역을 차지한다. */
+
+        /* flex-shrink : item이 줄어듦의 정도를 설정하는 속성이다. 값을 설정 시 높을수록 container가 줄었을 때 빠른 속도로 영역이 줄어든다. */
+
+        /* 즉, item간 flex-grow와 flex-shrink가 동일하다면 같은 속도로 늘어나고 줄어든다. */
+
+        /* flex-basis : 기본적으로 가질 item의 너비 또는 높이(main-axis에 따라 변화)를 설정한다. max-width가 동작하는 것처럼 설정한 값보다 줄어들 수 있다. */
+
+        /* flex-grow / flex-shrink / flex-basis 의 축약 속성 */
+        /* flex : [flex-grow] [flex-shrink] [flex-basis]*/
+
+        /* order : 각 item의 정렬 순서를 결정하는 속성이다. 값이 작을수록 순서가 앞으로, 값이 높을수록 순서가 뒤로 밀려난다. */
+
+        /* align-self : item들 중 개별적으로 item의 정렬을 설정하는 속성. */
+      }
+
+      .one {
+        /* flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 250px; */
+        flex: 1 1 250px;
+        order: 2;
+      }
+
+      .two {
+        /* flex-grow: 3;
+        flex-shrink: 2;
+        flex-basis: 250px; */
+        flex: 3 2 250px;
+        align-self: center;
+        order: 5;
+      }
+
+      .three {
+        /* flex-grow: 3;
+        flex-shrink: 1;
+        flex-basis: 250px; */
+        flex: 3 1 250px;
+        order: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item one">Flex item 1</div>
+      <div class="item two">Flex item 2</div>
+      <div class="item three">Flex item 3</div>
+    </div>
+  </body>
+</html>
