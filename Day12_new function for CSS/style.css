@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125em;
+  line-height: 1.6;
+  background-color: #e8e8e8;
+}
+
+/* min(), max()는 margin과 padding, font-size에도 사용이 가능하다. */
+/* 도움이 되는 게시물 https://web.dev/i18n/ko/min-max-clamp/ */
+
+.content {
+  background-color: white;
+  padding: 3em;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
+
+  /* min(base-width, max-width) */
+  /* min 함수에 쉼표로 구분된 표현식 목록에서 "가장 작은 값"을 선택한다. */
+
+  /* width: min(40%, 700px); */
+
+  /* 위와 같은 의미
+  width:40%;
+  max-width:700px;
+  */
+
+  /* max(base-width, min-width) */
+  /* max 함수에 쉼표로 구분된 표현식 목록에서 "가장 큰 값"을 선택한다. */
+  width: max(50%, 400px);
+
+  /* 위와 같은 의미
+  width:50%;
+  min-width:400px;
+  */
+
+  /* 하지만 max()는 min()보다 자주 사용되지는 않는다. 왜냐하면 보통 작은 화면을 우선해서 스타일링하기 때문에 상대적으로 최소값을 설정할 일이 드물기 때문이다.  */
+
+  /* width: 70%; */
+}
+
+.title {
+  margin: 0 0 0.5em;
+  font-weight: 900;
+  color: #fc6;
+  line-height: 0.8;
+
+  /* clamp() */
+  /* clamp(min, ideal, max) */
+  /* 설정된 이상적인 값을 기준으로 최대값과 최소값을 고정한다. */
+  /* font-size의 최소/최대 크기를 제한하고 유동적으로 변경하고 싶을 때 clamp를 사용하는 것이 유용하다. */
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+p {
+  background-color: lightblue;
+
+  /* clamp(min-width, width, max-width) */
+  /* width: clamp(200px, 50%, 20rem); */
+
+  /* 최소 폰트사이즈는 1rem(16px), 최대 폰트사이즈는 1.25rem(20px)이며 사이의 폰트 사이즈는 유동적으로 1.5vw로 설정한다. */
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
+}
