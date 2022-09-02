@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+}
+
+.example {
+  width: 90%;
+  margin: 5em auto;
+  padding: 10em 0;
+  background-color: steelblue;
+}
+
+/* min-width는 설정한 값의 이상이면 적용이 된다. */
+/* 현재 미디어쿼리는 "600px or bigger"가 적용된다. */
+/* 599px 이하가 되면 적용이 초기화된다. */
+@media (min-width: 600px) {
+  .example {
+    background-color: olivedrab;
+  }
+}
+
+@media (min-width: 800px) {
+  .example {
+    background-color: orange;
+  }
+}
+
+/* max-width는 설정한 값의 이하면 적용이 된다. */
+/* 현재 미디어쿼리는 "600px or smaller"가 적용된다. */
+/* 601px 이상이 되면 적용이 초기화된다. */
+/* @media (max-width: 600px) {
+  .example {
+    background-color: red;
+  }
+} */
+
+/* 미디어 쿼리 또한 가장 마지막에 적용된 스타일을 반영하기 때문에 순서에 주의하도록 한다. */
+
+/* 현재 600px 이상 900px 이하에만 적용된다. */
+/* @media (min-width: 600px) and (max-width: 900px) {
+} */
